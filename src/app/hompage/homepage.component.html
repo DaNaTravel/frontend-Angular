@@ -1,0 +1,125 @@
+<headerr [addd]="add"></headerr>
+<div class="homepage" (window:scroll)="srcoll()">
+  <div class="homepage-header">
+    <img
+      src="../../assets/image/nen.jpeg"
+      alt=""
+      class="homepage-header_img"
+    />
+    <img src="../../assets/image/DANA.png" alt="" class="homepage-header_img_dana">
+    <img src="../../assets/image/TRAVEL.png" alt="" class="homepage-header_img_travel">
+    <img src="../../assets/image/add.png" alt="" class="homepage-header_img_travel_add">
+    <p class="homepage-location_content">RECOMMENDED LOCATION</p>
+    <div class="main">
+    <div class="homepage-location">
+      <div class="img">
+      <img src="../../assets/image/nen44.jpeg" alt="" class="homepage-location_img">
+      <div class="img-information">
+        <p class="img-information_detail">My Khe Beach</p>
+        <p class="img-information_extra">A very beautiful place to visit</p>
+      </div>
+      </div>
+
+      <div class="img">
+        <img src="../../assets/image/nen222.jpeg" alt="" class="homepage-location_img">
+        <div class="img-information">
+          <p class="img-information_detail">Ghe Bang Beach</p>
+          <p class="img-information_extra">A very beautiful place to visit</p>
+        </div>
+        </div>
+
+
+        <div class="img">
+          <img src="../../assets/image/nen33.jpeg" alt="" class="homepage-location_img">
+          <div class="img-information">
+            <p class="img-information_detail">Non Nuoc Beach</p>
+            <p class="img-information_extra">A very beautiful place to visit</p>
+          </div>
+          </div>
+
+
+          <div class="img">
+            <img src="../../assets/image/nen1.jpeg" alt="" class="homepage-location_img">
+            <div class="img-information">
+              <p class="img-information_detail">Nam O Beach</p>
+              <p class="img-information_extra">A very beautiful place to visit</p>
+            </div>
+            </div>
+
+
+            <div class="img">
+              <img src="../../assets/image/nen5.jpeg" alt="" class="homepage-location_img">
+              <div class="img-information">
+                <p class="img-information_detail">French Village</p>
+                <p class="img-information_extra">A very beautiful place to visit</p>
+              </div>
+              </div>
+
+
+              <div class="img">
+                <img src="../../assets/image/nen6.jpeg" alt="" class="homepage-location_img">
+                <div class="img-information">
+                  <p class="img-information_detail">Bana Hill</p>
+                  <p class="img-information_extra">A very beautiful place to visit</p>
+                </div>
+                </div>
+    </div>
+    </div>
+  </div>
+  <div class="homepage-body">
+    <p class="homepage-body_content">RECOMMENDED ITINERARY</p>
+    <div class="homepage-body_main">
+
+
+      <div class="homepage-body_main_detail" *ngFor="let location of locations, let i=index">
+        <img
+          class="homepage-body_main_detail_img"
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference={{location.photos[3]}}&key=AIzaSyBVatgG_Di0Y8-yNMFDvczuyAGzIMcN0RU"
+
+          alt=""
+        />
+        <!-- <img
+        *ngIf="i==1"
+          class="homepage-body_main_detail_img"
+          src="../../assets/image/lich4.jpeg"
+          alt=""
+        />
+        <img
+        *ngIf="i==2"
+          class="homepage-body_main_detail_img"
+          src="../../assets/image/lich1.jpeg"
+          alt=""
+        />
+        <img
+        *ngIf="i==3"
+          class="homepage-body_main_detail_img"
+          src="../../assets/image/lich2.jpeg"
+          alt=""
+        />
+        <img
+        *ngIf="i==4"
+          class="homepage-body_main_detail_img"
+          src="../../assets/image/lich3.jpeg"
+          alt=""
+        />
+        <img
+        *ngIf="i==5"
+          class="homepage-body_main_detail_img"
+          src="../../assets/image/lich5.jpeg"
+          alt=""
+        /> -->
+        <div class="homepage-body_main_information">
+          <p class="homepage-body_main_information_detail"> DaNang Chill Chill</p>
+          <p class="homepage-body_main_information_extra"> Duration: {{location.days}}</p>
+          <p class="homepage-body_main_information_extra" [class.]> Cost: {{location.cost.toLocaleString('vi-VN')}}VNĐ</p>
+          <button class="homepage-body_main_information_button" (click)="detail(location._id)">See more</button>
+        </div>
+        <div class="main-favorite"> 
+          <i class="fa-solid fa-heart pink" (click)="unlove(location._id)" *ngIf="thich.includes(location._id)"></i>
+          <i class="fa-solid fa-heart " (click)="love(location._id)" *ngIf="!thich.includes(location._id)"></i> 
+          {{location.favoriteCount}} 
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

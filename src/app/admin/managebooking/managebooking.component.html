@@ -1,0 +1,75 @@
+<div class="managebooking">
+    <div class="manabooking-header">
+      <form class="form">
+        <input
+          type="text"
+          class="manabooking-header_input"
+          placeholder="Search here....."
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </form>
+      <img
+        src="../../assets/image/img-itinerary_review.jpg"
+        alt=""
+        class="manabooking-header_img"
+      />
+    </div>
+    <div class="manabooking-siderbar">
+      <img
+        src="../../assets/image/img-logo.png"
+        alt=""
+        class="manabooking-siderbar_logo"
+      />
+      <div class="manabooking-siderbar_function">
+        <div class="mainnn">
+          <i class="fa-solid fa-house"></i>
+          <span class="admin-siderbar_function_detail" routerLink="/admin"> Home Page</span>
+          <br>
+      </div>
+      <div class="mainnn">
+      <i class="fa-solid fa-user"></i>
+      <span class="admin-siderbar_function_detail" routerLink="/manageuser"> Manage User</span>
+      <br>
+  </div>
+  <div class="mainnn">
+      <i class="fa-solid fa-plane"></i>
+      <span class="admin-siderbar_function_detail" routerLink="/manageitinerary"> Manage Itinerary</span>
+      <br>
+  </div>
+  <div class="mainnn">
+      <i class="fa-sharp fa-solid fa-hotel"></i>
+      <span class="admin-siderbar_function_detail" routerLink="/managelocation">Manage Location</span>
+      <br>
+  </div>
+        <div class="line"></div>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span class="manabooking-siderbar_function_detail"> Sign Out</span>
+      </div>
+    </div>
+
+    <p class="manabooking-table_header">Total of booking: 12.000</p>
+  
+    <div class="manabooking-table">
+      <div class="manabooking-table_main_header">
+        <p class="manabooking-table_main_header_id">ID</p>
+        <p class="manabooking-table_main_header_img">IMAGE</p>
+        <p class="manabooking-table_main_header_name">NAME</p>
+        <p class="manabooking-table_main_header_role">PRICE</p>
+        <p class="manabooking-table_main_header_role">STATUS</p>
+        <p class="manabooking-table_main_header_action">ACTION</p>
+      </div>
+      <div class="manabooking-table_main">
+        <div class="manabooking-table_main_content mot" *ngFor="let historybooking of historybookings">
+          <p class="manabooking-table_main_content_id">{{historybooking.id}}</p>
+          <p class="manabooking-table_main_content_img"><img src="{{historybooking.img}}" alt="" class="manabooking-table_main_content_img_detail"></p>
+          <p class="manabooking-table_main_content_name">{{historybooking.name}}</p>
+          <p class="manabooking-table_main_content_role">{{historybooking.price}}</p>
+          <p class="manabooking-table_main_content_role"><i class="fa-solid fa-check"></i></p>
+          <p class="manabooking-table_main_content_action">
+              <i class="fa-solid fa-trash"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

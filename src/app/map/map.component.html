@@ -1,0 +1,32 @@
+
+<div class="background" (click)="back()"></div>
+<div class="itinerary">
+  <div class="itinerary-search">
+    <div class="itinerary-search_input">
+      <div class="itinerary-search_input_day">
+        <p class="itinerary-search_input_day_detail add" (click)="thi(0)">Day 1</p>
+        <p class="itinerary-search_input_day_detail" *ngFor="let thie of thien let i=index" (click)="thi(i+1)">{{thie}}</p>
+
+      </div>
+      <div class="itinerary-search_input_siderbar">
+        <button class="itinerary-search_input_siderbar_button"  (click)="unmap()">View Itinerary</button>
+        <button class="itinerary-search_input_siderbar_button color" (click)="map()">View Map</button>
+        <button class="itinerary-search_input_siderbar_button"  routerLink="/itinerary/create">Export</button>
+        <button class="itinerary-search_input_siderbar_button"  (click)="edit()" >Edit Itinerary</button>
+      </div>
+
+    </div>
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10" [class.zoom]="zoom">
+      <agm-direction
+        *ngFor="let locatio of location; let i = index"
+        [origin]="location[i]"
+        [destination]="location[i + 1]"
+        [renderOptions]="{suppressMarkers: true}"
+      ></agm-direction>
+      <agm-marker  *ngFor="let locatio of location; let i = index" [label]=" originLabel[i]" [latitude]="locatio.lat" [longitude]="locatio.lng" [markerDraggable]="false"></agm-marker>
+    </agm-map>
+
+
+  </div>
+</div>

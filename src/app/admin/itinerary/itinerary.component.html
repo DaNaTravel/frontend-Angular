@@ -1,0 +1,76 @@
+<div class="manageuser">
+    <div class="manageuser-header">
+      <form class="form">
+        <input
+          type="text"
+          class="manageuser-header_input"
+          placeholder="Search here....."
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </form>
+      <img
+        src="../../assets/image/img-itinerary_review.jpg"
+        alt=""
+        class="manageuser-header_img"
+      />
+    </div>
+    <div class="manageuser-siderbar">
+      <img
+        src="../../assets/image/img-logo.png"
+        alt=""
+        class="manageuser-siderbar_logo"
+      />
+      <div class="manageuser-siderbar_function">
+        <div class="mainnn">
+          <i class="fa-solid fa-house"></i>
+          <span class="admin-siderbar_function_detail" routerLink="/admin"> Home Page</span>
+          <br>
+      </div>
+      <div class="mainnn">
+      <i class="fa-solid fa-user"></i>
+      <span class="admin-siderbar_function_detail" routerLink="/manageuser"> Manage User</span>
+      <br>
+  </div>
+  <div class="mainnn">
+      <i class="fa-solid fa-plane"></i>
+      <span class="admin-siderbar_function_detail" routerLink="/manageitinerary"> Manage Itinerary</span>
+      <br>
+  </div>
+  <div class="mainnn">
+      <i class="fa-sharp fa-solid fa-hotel"></i>
+      <span class="admin-siderbar_function_detail" routerLink="/managelocation">Manage Location</span>
+      <br>
+  </div>
+        <div class="line"></div>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span class="manageuser-siderbar_function_detail"> Sign Out</span>
+      </div>
+    </div>
+
+    <p class="manageuser-table_header">Total of itinerary:12.000</p>
+  
+    <div class="manageuser-table">
+      <div class="manageuser-table_main_header">
+        <p class="manageuser-table_main_header_id">ID</p>
+        <p class="manageuser-table_main_header_img">NAME</p>
+        <p class="manageuser-table_main_header_name">PRICE</p>
+        <p class="manageuser-table_main_header_email">DAY</p>
+        <p class="manageuser-table_main_header_role">STATUS</p>
+        <p class="manageuser-table_main_header_action">ACTION</p>
+      </div>
+      <div class="manageuser-table_main">
+        <div class="manageuser-table_main_content mot" *ngFor="let itinerary of itinerarys">
+          <p class="manageuser-table_main_content_id">{{itinerary.id}}</p>
+          <p class="manageuser-table_main_content_img">{{itinerary.name}}</p>
+          <p class="manageuser-table_main_content_name">{{itinerary.price}}</p>
+          <p class="manageuser-table_main_content_email">{{itinerary.day}}</p>
+          <p class="manageuser-table_main_content_role">{{itinerary.status}}</p>
+          <p class="manageuser-table_main_content_action">
+              <i class="fa-solid fa-trash"></i>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
